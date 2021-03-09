@@ -5,7 +5,7 @@ const PORT = 8080;
 // APP
 const app = express();
 app.get('/', (req,res) => {
-    res.send("앙뇽하새염222");
+    res.send("Git fetch Test를 위한 문구 수정");
 });
 
 app.listen(PORT);
