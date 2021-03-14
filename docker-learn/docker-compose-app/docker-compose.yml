@@ -1,0 +1,13 @@
+# docker-compose version
+version: "3"
+
+# 실행시킬 container들을 정의.
+services: 
+  # container 1 : redis-server
+  redis-server:
+    image: "redis"  # base image
+  # container 2 : node-app
+  node-app:
+    build: .  # docker-compose.yml 파일과 같은 경로에 있는 dockerfile을 기준으로 image build를 한다.
+    ports:    # node-app container에서 local과 container의 port를 맵핑 설정함.
+    - "5000:8080"
