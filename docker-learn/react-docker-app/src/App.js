@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          바로 반영
+          volume을 설정하여 저장시 수정사항이 즉시 반영 되는 것을 확인.
         </a>
       </header>
     </div>
