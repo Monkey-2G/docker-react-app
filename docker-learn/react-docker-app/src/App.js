@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          volume을 설정하여 저장시 수정사항이 즉시 반영 되는 것을 확인.
+          volume을 설정하여 저장시 수정사항이 즉시 반영 되는 것을 확인하고 또 확인
         </a>
       </header>
     </div>
