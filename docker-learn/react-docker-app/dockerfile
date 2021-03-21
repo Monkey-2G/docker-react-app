@@ -1,0 +1,23 @@
+# base image를 node로 설정하고, as 로 build라는 명시를 해주었다. 다음 FROM까지의 내용은 builder에 포함된다.
+FROM node:alpine as builder
+
+# container 내부에서 작업할 경로를 설정한다.
+WORKDIR '/usr/src/app'
+
+COPY package.json .
+
+# 종속성 설치
+RUN npm install
+
+# package.json이외의 파일들도 copy한다.
+COPY ./ ./
+
+RUN npm run build
+
+# 운영환경에서 돌릴 서버에 관한 내용 (nginx)
+FROM nginx
+
+# 2 Line의 builder 라고 명시한 부분의 것을 복사를 하겠다는 의미이다.
+# [명시한 base image] [명시한 base image의 container 안에 있는 복사할 file or directory] [현재 nginx에서 복사한 파일을 붙여넣을 경로]
+# /usr/share/nginx/html 경로는 nginx의 기본 설정 경로라고함. 나중에 설정을 통해 다른 곳으로 옮길 수 있다고 함.
+COPY --from=builder /usr/src/app/build /usr/share/nginx/html
