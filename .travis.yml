@@ -11,7 +11,7 @@ services:
 # 테스트 전 기본적으로 설정 할 것
 before_install:
   - echo "start crating an image with dockerfile" # 기본 출력문
-  - docker build -t dlwlgns412/docker-react-app -f dockerfile.dev ./docker-learn/react-docker-app # docker환경에서 run test를 하기 위해서는 build 작업이 필요하므로 image build 작업을 해준다.
+  - docker build -t dlwlgns4612/docker-react-app -f ./docker-learn/react-docker-app/dockerfile.dev ./docker-learn/react-docker-app # docker환경에서 run test를 하기 위해서는 build 작업이 필요하므로 image build 작업을 해준다.
 
 # 실제로 작동할 부분.
 script:
