@@ -1,0 +1,22 @@
+# 관리자 권한 획득
+sudo: required
+
+# 언어(플랫폼 설정)
+language: generic
+
+# 서비스 환경 설정
+services:
+  - docker
+
+# 테스트 전 기본적으로 설정 할 것
+before_install:
+  - echo "start crating an image with dockerfile" # 기본 출력문
+  - docker build -t dlwlgns412/docker-react-app -f dockerfile.dev . # docker환경에서 run test를 하기 위해서는 build 작업이 필요하므로 image build 작업을 해준다.
+
+# 실제로 작동할 부분.
+script:
+  - docker run -e CI=true dlwlgns4612/docker-react-app npm run test -- --coverage
+
+# script 부분 성공 후 나올 부분
+after_success:
+  - echo "Test Success"
