@@ -29,7 +29,7 @@ after_success:
     app: "docker-react-app" # 생성된 APP의 이름
     env: "Dockerreactapp-env" # 환경설정 
     bucket_name: "elasticbeanstalk-us-east-2-907476727759" # 해당 elastic beanstalk를 위한 S3 bucket 이름
-    bucket_path: "docker-react-app" # app 이름
+    bucket_path: "docker-react-app" # app 이름과 동일
     on:
       branch: master # 어떤 branch에 push를 할 때 AWS에 배포를 할 것인지 설정
     access_key_id: $AWS_ACCESS_KEY # AWS에서 IAM USER 생성시 발급된 ACCESS KEY를 github와 연동된 Travis CI 계정에서 변수로 만들어 사용한다. (KEY값은 외부에 노출되면 안됨)
