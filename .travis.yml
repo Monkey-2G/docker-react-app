@@ -22,7 +22,7 @@ after_success:
   - echo "Test Success"
   # =========================================================
 
-# 테스트가 성공 후, 실제 배포를 설정할 부분
+# 테스트가 성공 후, 실제 배포를 설정할 부분 (현재 deploy가 제대로 되지 않아 테스트중)
   deploy:
     provider: elasticbeanstalk # 외부 서비스 표시
     region: "us-east-2" # 현재 사용하고 있는 aws의 서비스가 위치하고있는 물리적 장소
