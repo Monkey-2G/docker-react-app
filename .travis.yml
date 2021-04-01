@@ -21,16 +21,3 @@ script:
 after_success:
   - echo "Test Success"
   # =========================================================
-
-# 테스트가 성공 후, 실제 배포를 설정할 부분 (현재 deploy가 제대로 되지 않아 테스트중)
-  deploy:
-    provider: elasticbeanstalk
-    region: "us-east-2"
-    app: "docker-react-app"
-    env: "Dockerreactapp-env"
-    bucket_name: "elasticbeanstalk-us-east-2-907476727759"
-    bucket_path: "docker-react-app"
-    on:
-      branch: master
-    access_key_id: $AWS_ACCESS_KEY
-    secret_access_key: $AWS_SECRET_ACCESS_KEY
